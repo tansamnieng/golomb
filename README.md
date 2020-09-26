@@ -16,7 +16,7 @@ Não foi utilizado nenhuma biblioteca ou serviços de terceiros, apenas o já ve
 A instalação pode ser feita baixando manualmente do GitHub ou rodando o seguinte comando na ferramente Git:
 
 ```
-git clone https://github.com/vmatter/TeoriaInfoT1-GA.git
+git clone https://github.com/vmatter/Codificador_Decodificador.git
 ```
 
 ## Como Usar
