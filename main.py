@@ -1,5 +1,5 @@
-from codificador import Codificador
-from decodificador import Decodificador
+from src.codificador import Codificador
+from src.decodificador import Decodificador
 
 ##### Configuracao do codificador #####
 
@@ -7,7 +7,7 @@ from decodificador import Decodificador
 codificar = True
 
 # Nome do arquivo:
-nome_arquivo = 'alice29.txt'
+nome_arquivo = 'data/alice29.txt'
 
 ''' Tipos
     0 = Golomb
