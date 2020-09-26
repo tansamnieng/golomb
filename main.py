@@ -18,7 +18,7 @@ nome_arquivo = 'data/alice29.txt'
 '''
 
 # Escolha o tipo de codificacao
-tipo = 4
+tipo = 0
 
 golomb_divisor = 16 # Deve ser potencia de 2 (2, 4, 8, 16,...)
 
@@ -37,10 +37,10 @@ decodificar = True
     .delta      = Delta
 '''
 # Nome do arquivo que deseja decodificar:
-nome_arquivo_codificado = 'alice29.delta'
+nome_arquivo_codificado = 'alice29.golomb'
 
 # Extensao do novo arquivo decodificado
-extensao_saida = 'txt2'
+extensao_saida = 'txt'
 
 #########################################
 
