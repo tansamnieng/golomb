@@ -10,7 +10,6 @@ def execution_time(start_time):
     print(" Time : %s second" % (time.time() - start_time))
 
 
-
 def print_file_size(file_name,mode):
     file_size = os.path.getsize(file_name)
     file_size = file_size/1024 # to Kb
@@ -59,23 +58,43 @@ decodificar = True
 nome_arquivo_codificado = 'SD4.golomb'
 # Extensao do novo arquivo decodificado
 # extensao_saida = 'txt'
+GOLOMB=".golomb"
 extensao_saida = 'dat'
 
 #########################################
+import pathlib
 
-# Codificacao:
-if codificar:
-    codifica = Codificador()
+FILE_PATH = "/Users/smart/Desktop/golomb/data_group5"
 
-    print_file_size(nome_arquivo,True)
-    start_time =time.time()
-    codifica.codificar(nome_arquivo, tipo, golomb_divisor)
-    execution_time(start_time)
+for path in pathlib.Path(FILE_PATH).iterdir():
+    if path.is_file():
+        data = str(path)
+        data = data.split("/")[-1]
+        # print(data)
+        # data=data.split(".")[0]
+        # data=data+GOLOMB
+        # print(data)
+        print("****start****")
+        print(data)
+    # Codificacao:
+        if codificar:
+            file_name = str(path)
+            codifica = Codificador()
+            print_file_size(file_name,True)
+            start_time =time.time()
+            codifica.codificar(file_name, tipo, golomb_divisor)
+            execution_time(start_time)
 
-# Decodificacao:
-if decodificar:
-    print_file_size(nome_arquivo_codificado,False)
-    start_time =time.time()
-    decodifica = Decodificador()
-    decodifica.decodificar(nome_arquivo_codificado, extensao_saida)
-    execution_time(start_time)
+        # Decodificacao:
+        if decodificar:
+            file_name_modified = str(path)
+            file_name_modified = file_name_modified.split("/")[-1]
+            file_name_modified = file_name_modified.split(".")[0]
+            file_name_modified = file_name_modified+GOLOMB
+
+            print_file_size(file_name_modified,False)
+            start_time =time.time()
+            decodifica = Decodificador()
+            decodifica.decodificar(file_name_modified, extensao_saida)
+            execution_time(start_time)
+            print("****end****")
