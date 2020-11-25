@@ -40,7 +40,7 @@ class Decodificador():
 
         file.close()
         self.arquivo_destino.close()
-        print('Decodificado com sucesso!')
+        # print('Decodificado com sucesso!')
 
     def _ler_cabecalho(self, file):
         """Le e armazena as informacoes do cabecalho"""

@@ -94,7 +94,7 @@ class Codificador():
 
         file.close()
         self.arquivo_destino.close()
-        print('Codificado com sucesso!')
+        # print('Codificado com sucesso!')
 
     def _criar_cabecalho(self, tipo, golomb_divisor, maiorValorDelta = 0):
         # Primeiro byte, informa qual o tipo da codificacao
