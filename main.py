@@ -5,7 +5,6 @@ from src.decodificador import Decodificador
 
 ##### Configuracao do codificador #####
 
-
 def execution_time(start_time):
     # print(" Time : %s second" % (time.time() - start_time))
     return (time.time() - start_time)*1000
@@ -19,7 +18,6 @@ def get_decompression_size(data):
     file = os.getcwd()
     file = file+ "/"+ data
     return print_file_size(file)
-
 
 
 # Se deseja codificar:
@@ -73,7 +71,7 @@ compressed_size =0
 uncompress_size=0
 decompress_time =0.0
 compressed_file_name =""
-for path in pathlib.Path(FILE_PATH).iterdir():
+for path in sorted (pathlib.Path(FILE_PATH).iterdir()):
     if path.is_file():
         data = str(path)
         data = data.split("/")[-1]
