@@ -174,6 +174,10 @@ class Codificador():
 
 
 
+
+
+
+
     # def _elias_gamma(self, valor):
     #     # Por padrao nao codifica diretamente o zero (NULL na tabela ASCII)
     #     valor += 1
