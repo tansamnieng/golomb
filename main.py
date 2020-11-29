@@ -1,7 +1,14 @@
 import os
 import time
+import sys
 from src.codificador import Codificador
 from src.decodificador import Decodificador
+
+if len(sys.argv) < 2:
+	print("Please provide a path for a directory with testfiles")
+	sys.exit(0)
+
+FILE_PATH =  sys.argv[1]
 
 ##### Encoder configuration #####
 result_path = ""
@@ -24,7 +31,7 @@ def print_file_size(file_name):
 def get_decompression_size(data):
     file = os.getcwd()
     file = file+ "/"+ data
-    print("here"+file)
+    # print("here"+file)
     return print_file_size(file)
 
 
@@ -51,7 +58,9 @@ GOLOMB=".golomb"
 extention_file = 'dat'
 
 #########################################
-FILE_PATH = "/Users/smart/Desktop/golomb/encode_decode/data_group5"
+# FILE_PATH = "/Users/smart/Desktop/golomb/encode_decode/data_group5"
+# FILE_PATH = "/Users/smart/Desktop/golomb/data_g"
+
 conpression_time = 0.0
 original_size=0
 compressed_size =0
@@ -61,7 +70,7 @@ compressed_file_name =""
 
 
 result_path = creat_result_directory()
-print (result_path)
+# print (result_path)
 
 
 for filename in sorted (os.listdir(FILE_PATH)):
@@ -73,6 +82,7 @@ for filename in sorted (os.listdir(FILE_PATH)):
             codifica = Codificador()
             original_size = print_file_size(original_input_file)
             start_time = time.time()
+            # print(original_input_file)
             codifica.codificar(original_input_file, tipo, golomb_divisor)
             conpression_time = execution_time(start_time)
 

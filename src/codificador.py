@@ -46,8 +46,11 @@ class Codificador():
         #     extensao = '.delta'
 
         # Retira o caminho ate o arquivo e cria o arquivo saida no diretorio atual
+        # print(arquivo)
         destino = arquivo[arquivo.rfind('/')+1:]
+        # print("Here"+destino)
         destino = destino[destino.rfind('\\')+1:]
+        # print("#"+destino)
         # Cria arquivo de saida. Se arquivo tiver extensao, substitui pela nova
         if destino.rfind('.') >= 0:
             self.arquivo_destino = open(''.join([destino[:destino.rfind('.')], extensao]), 'wb')
