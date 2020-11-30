@@ -1,7 +1,7 @@
 import os
 import time
 import sys
-from codificador import Codificador
+from encoder import Encoder
 from decodificador import Decodificador
 
 if len(sys.argv) < 2:
@@ -79,11 +79,11 @@ for filename in sorted (os.listdir(FILE_PATH)):
         print("\n")
         print("Golomb ON : %s " %filename.split(".")[0])
         if encoding:
-            codifica = Codificador()
+            codifica = Encoder()
             original_size = print_file_size(original_input_file)
             start_time = time.time()
             # print(original_input_file)
-            codifica.codificar(original_input_file, tipo, golomb_divisor)
+            codifica.code(original_input_file, tipo, golomb_divisor)
             conpression_time = execution_time(start_time)
 
         if decoding:
