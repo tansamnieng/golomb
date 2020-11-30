@@ -9,31 +9,22 @@ class Encoder():
     def code(self, arquivo, tipo, result_path,golomb_divisor = 0):
         """Encode the file with the given type."""
         self.buffer_escrita = ''
-        # Golomb - divisor deve ser potencia de 2 (2, 4, 8, 16,...)
+        # Golomb - divisor must be power of 2 (2, 4, 8, 16, ...)
         if tipo == 0:
             self.golomb_divisor = golomb_divisor
             self.logDivisor = int(math.log(self.golomb_divisor, 2))
             codificador = self._golomb
             codificador_final = self._trata_final_golomb
             extensao = '.golomb'
-       
-
-        # out = result_path+"/"+filename.split(".")[0]
+    
         
         destino = arquivo[arquivo.rfind('/')+1:]
         filename = destino
-        # print("Here "+result_path+"/"+filename) 
         outputfile =result_path+"/"+filename.split(".")[0]+extensao
-
         destino = destino[destino.rfind('\\')+1:]
-        # print("#"+destino)
-        # Cria arquivo de saida. Se arquivo tiver extensao, substitui pela nova
+        # Create output file. If file has extension, replace it with the new one
         if destino.rfind('.') >= 0:
-            # self.arquivo_destino = open(''.join([destino[:destino.rfind('.')], extensao]), 'wb')
             self.arquivo_destino = open(outputfile, 'wb')
-
-        # else:
-        #     self.arquivo_destino = open(''.join([destino, extensao]), 'wb')
 
     
         self._criar_cabecalho(tipo, golomb_divisor)

@@ -20,8 +20,6 @@ class Decoder():
         if arquivo.rfind('.') >= 0:
             # self.arquivo_destino = open('.'.join([arquivo[:arquivo.rfind('.')], extensao_saida]), 'wb')
             self.arquivo_destino = open(outputfile, 'wb')
-        # else:
-        #     self.arquivo_destino = open('.'.join([arquivo, extensao_saida]), 'wb')
 
          # The file to be decoded
         with open(arquivo, 'rb') as file:
@@ -113,7 +111,7 @@ class Decoder():
                 self.buffer_escrita.append(valorResposta)
 
     def _unaria(self, binario):
-        """Decodes the binary values ​​encoded as Unari"""
+        """Decodes the binary values ​​encoded as Unary"""
         for bit in binario:
             if bit == '0':
                 self._unaria_contador += 1
