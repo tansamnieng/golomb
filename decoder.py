@@ -7,17 +7,21 @@ class Decoder():
         # Header byte size
         self.tamanho_cabecalho = 3
 
-    def decodificar(self, arquivo, extensao_saida):
+    def decode(self, arquivo, extensao_saida,result_path):
         """Decodes the reported file"""
         # To store header information
         self.cabecalho = []
         self.buffer_escrita = []
 
         # Create output file. If file has extension, replace it with the new one
+        filename = arquivo[arquivo.rfind('/')+1:]
+        outputfile =result_path+"/"+filename.split(".")[0]+extensao_saida
+
         if arquivo.rfind('.') >= 0:
-            self.arquivo_destino = open('.'.join([arquivo[:arquivo.rfind('.')], extensao_saida]), 'wb')
-        else:
-            self.arquivo_destino = open('.'.join([arquivo, extensao_saida]), 'wb')
+            # self.arquivo_destino = open('.'.join([arquivo[:arquivo.rfind('.')], extensao_saida]), 'wb')
+            self.arquivo_destino = open(outputfile, 'wb')
+        # else:
+        #     self.arquivo_destino = open('.'.join([arquivo, extensao_saida]), 'wb')
 
          # The file to be decoded
         with open(arquivo, 'rb') as file:
