@@ -2,7 +2,7 @@ import os
 import time
 import sys
 from encoder import Encoder
-from decodificador import Decodificador
+from decoder import Decoder
 
 if len(sys.argv) < 2:
 	print("Please provide a path for a directory with testfiles")
@@ -95,7 +95,7 @@ for filename in sorted (os.listdir(FILE_PATH)):
 
             compressed_size = print_file_size(file_name_modified)
             start_time =time.time()
-            decodifica = Decodificador()
+            decodifica = Decoder()
             decodifica.decodificar(file_name_modified, extention_file )
             decompress_time = execution_time(start_time)
         print("Finished compression of : %s in %s ms" %(filename,conpression_time))
