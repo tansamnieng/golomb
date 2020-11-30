@@ -1,8 +1,8 @@
 import os
 import time
 import sys
-from src.codificador import Codificador
-from src.decodificador import Decodificador
+from codificador import Codificador
+from decodificador import Decodificador
 
 if len(sys.argv) < 2:
 	print("Please provide a path for a directory with testfiles")
