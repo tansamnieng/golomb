@@ -105,7 +105,7 @@ class Encoder():
             integer value in string format (input: 10, return: '00001010')
     """
 
-    # Golomb --> prefixo(unario) + 1 + sufixo(binario)
+    # Golomb -> prefix (unario) + 1 + suffix (binary)
     def _golomb(self, value ):
         # Calculates the quotient
         quotient = int(value  / self.golomb_divisor)
