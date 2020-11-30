@@ -37,7 +37,6 @@ decoding = True
 '''
 # Choose the type of encoding
 tipo = 0
-
 golomb_divisor = 16 # Must be a power of 2 (2, 4, 8, 16, ...)
 
 GOLOMB=".golomb"
